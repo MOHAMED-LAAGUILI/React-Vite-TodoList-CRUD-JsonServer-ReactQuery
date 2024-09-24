@@ -1,0 +1,19 @@
+
+to install json server 
+npm i json-server
+
+and the axios http fetching handller
+npm i axios
+
+
+to run the json server where data base exists
+json-server --watch .\src\Data\database.json
+
+if the server didntţtart and rendered errs try to install json server as globally 
+npm i -g json-server
+
+to install a react hook form controls fuctions
+npm i react-hook-form
+
+to install routers pkg
+npm i react-router-dom

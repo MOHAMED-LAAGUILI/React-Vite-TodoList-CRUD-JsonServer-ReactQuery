@@ -1,0 +1,74 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "title": "HTML - CSS",
+      "completed": true
+    },
+    {
+      "id": "2",
+      "title": "JS (ES7)",
+      "completed": true
+    },
+    {
+      "id": "3",
+      "title": "React Js + Vite.js",
+      "completed": false
+    },
+    {
+      "id": "4",
+      "title": "Express JS",
+      "completed": true
+    },
+    {
+      "id": "6f97",
+      "title": "az",
+      "completed": true
+    },
+    {
+      "id": "5fb7",
+      "title": "azz",
+      "completed": false
+    },
+    {
+      "id": "cebc",
+      "title": "s",
+      "completed": false
+    },
+    {
+      "id": "9b65",
+      "title": "s",
+      "completed": true
+    },
+    {
+      "id": "e3af",
+      "title": "xx",
+      "completed": true
+    },
+    {
+      "id": "3820",
+      "title": "q",
+      "completed": true
+    },
+    {
+      "id": "9bff",
+      "title": "ss",
+      "completed": true
+    },
+    {
+      "id": "e94b",
+      "title": "az",
+      "completed": true
+    },
+    {
+      "id": "79ad",
+      "title": "sss",
+      "completed": false
+    },
+    {
+      "id": "5986",
+      "title": "sss",
+      "completed": true
+    }
+  ]
+}
