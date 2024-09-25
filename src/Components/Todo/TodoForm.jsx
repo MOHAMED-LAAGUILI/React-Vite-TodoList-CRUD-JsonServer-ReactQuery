@@ -2,44 +2,55 @@ import { useForm } from "react-hook-form";
 import TodoModel from "../../Models/TodoModel";
 import TodoApi from "../../Api/TodoApi";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useParams } from "react-router-dom";
 
-export default function TodoForm({ onCreate }) {
-  const { register, handleSubmit, formState: { errors, isValid } } = useForm();
 
-  const [message, setMessage] = useState('');
+export default function TodoForm({ isUpdate = false }) {
+  const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm({
+    
+    defaultValues: async () => {
+
+        if (params.id && isUpdate) {
+        return await TodoApi.get(params.id)
+        }
+
+      }
+    } 
+    );
 
   const submitForm = async (data) => {
-    const todo = new TodoModel(data.id, data.title, data.completed);
-
-    try {
-      const response = await TodoApi.create(todo);
-      onCreate(response.data);
-      setMessage({
-        message: "✅ Todo created successfully 😃",
-        type: "success"
-      });
-    } catch (error) {
-      console.error(error);
+// for update & add
+    if (isUpdate) {
+      const todo = new TodoModel(data.id,data.title, data.completed, data.id);
+      await TodoApi.update(todo);
+    } else {
+      const todo = new TodoModel(data.id,data.title, data.completed);
+      await TodoApi.create(todo);
     }
+
+    window.history.back();
   };
 
+
+
+// update
+  const params = useParams();
+
+
   return (
-    <div>
-      {message && (
-        <div className={`alert alert-${message.type}`} role="alert">
-          <strong>{message.message}</strong>
-        </div>
-      )}
+    <>
+      <h1 className="text-center">{isUpdate ? 'Update' : 'Create'} Form</h1>
 
       <form onSubmit={handleSubmit(submitForm)}>
         <div className="mb-3">
           <label className="form-label fw-bolder">Title :</label>
           <input
             type="text"
+            // for create
             {...register("title", { required: { value: true, message: "required field" } })}
             className="form-control"
-            placeholder=""
+            // for update
+           
           />
           <small className="text-danger fw-bolder">{errors.title?.message}</small>
         </div>
@@ -47,20 +58,23 @@ export default function TodoForm({ onCreate }) {
         <div className="mb-3">
           <input
             type="checkbox"
+            //for create
             {...register("completed")}
             className="form-check-input"
+           // for update
+          
           />
           <label className="form-check-label">Completed </label>
         </div>
 
         <div className="form-group mb-3">
-          <input type="submit" className="btn btn-primary" disabled={!isValid} value="Create" />
+          <input type="submit" className="btn btn-primary" disabled={!isValid || !isDirty} value={isUpdate ? 'Update' : 'Create'} />
         </div>
       </form>
-    </div>
+    </>
   );
 }
 
 TodoForm.propTypes = {
-  onCreate: PropTypes.func.isRequired,
+  isUpdate: PropTypes.bool,
 };

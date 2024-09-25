@@ -1,18 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+
+export default function Layout() {
+  return (
+    <>
+      <nav className="navbar navbar-expand navbar-light bg light">
+        <ul className="nav navbar-nav">
+          <li className="nav-item">
+            <Link to={"/"} className="nav-link">
+              List
+            </Link>
+          </li>
+
+          <li className="nav-item">
+            <Link to={"/todo/create"} className="nav-link">
+              Create
+            </Link>
+          </li>
 
 
-export default function Layout () {
-    return (
-        <>
+        </ul>
+      </nav>
 
-        <na className="navbar navbar-expand navbar-light bg light">
-            <ul className="nav navbar-nav">
-                <li className="nav-item">
-                    <Link to={'/'} className="nav-link">List</Link>
-                </li>
-            </ul>
-        </na>
-        </>
-    );
-};
-
+      <div className="container w-75 my-5">
+        <Outlet />
+      </div>
+    </>
+  );
+}
