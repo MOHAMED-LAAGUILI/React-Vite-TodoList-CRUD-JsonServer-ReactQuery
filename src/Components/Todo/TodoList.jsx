@@ -20,11 +20,12 @@ export default function TodoList() {
     const id = e.currentTarget.value;
     try {
       await TodoApi.delete(id);
-      window.location.reload()
+      setTodos(todos.filter(todo => todo.id !== id)); // Update state without reloading
     } catch (error) {
       console.error(error);
+      // You could add some user feedback here
     }
-  }
+  };
 
  
 
