@@ -2,17 +2,20 @@
 to install json server 
 npm i json-server
 
-and the axios http fetching handller
+and the Axios HTTP fetching handler
 npm i axios
 
 
-to run the json server where data base exists
+to run the json server to render our JSON file
 json-server --watch .\src\Data\database.json
 
-if the server didntţtart and rendered errs try to install json server as globally 
+to run react app (vite)
+npm run dev
+
+if the server didn't start and rendered errors try to install the json server as globally 
 npm i -g json-server
 
-to install a react hook form controls fuctions
+to install a react hook form controls functions
 npm i react-hook-form
 
 to install routers pkg
