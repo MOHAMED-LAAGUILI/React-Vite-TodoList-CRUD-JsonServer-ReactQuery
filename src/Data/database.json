@@ -1,17 +1,15 @@
 {
   "todos": [
     {
-      "id": "5bb4",
+      "id": "5b24",
       "title": "HTML CSS",
       "completed": true
     },
-    
     {
       "id": "5bb4",
       "title": "Bootstrap / Tailwind",
       "completed": true
     },
-
     {
       "id": "brt1",
       "title": "JS ES7",
@@ -22,13 +20,11 @@
       "title": "node JS / EXpress",
       "completed": true
     },
-
     {
       "id": "sez6",
       "title": "Git & Github",
       "completed": true
     },
-
     {
       "id": "dfgd6",
       "title": "React  JS (Vite.js)",
@@ -37,11 +33,6 @@
     {
       "id": "dsf5",
       "title": "Shadcn UI",
-      "completed": false
-    },
-    {
-      "id": "dsf5",
-      "title": "React Native / Ionic",
       "completed": false
     }
   ]

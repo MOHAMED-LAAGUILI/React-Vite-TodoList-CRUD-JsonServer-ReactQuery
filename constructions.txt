@@ -1,10 +1,13 @@
+To setp ur react env as vite Toolkit 
+npm create vite@latest "project-name"
+
+
 
 to install json server 
 npm i json-server
 
 and the Axios HTTP fetching handler
 npm i axios
-
 
 to run the json server to render our JSON file
 json-server --watch .\src\Data\database.json
@@ -20,3 +23,6 @@ npm i react-hook-form
 
 to install routers pkg
 npm i react-router-dom
+
+to install RTQuery
+npm i react-query

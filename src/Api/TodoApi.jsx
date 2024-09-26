@@ -4,8 +4,7 @@ export default {
 
 //read
   getAll: async () => {
-    const data = await customAxios.get('/');
-    return data.data;
+    return await customAxios.get('/');
   },
 
 // add
