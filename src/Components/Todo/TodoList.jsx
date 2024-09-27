@@ -1,8 +1,11 @@
 import TodoApi from "../../Api/TodoApi";
 import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
+import TodoCreate from "./TodoCreate";
 
 export default function TodoList() {
+
+
 
 
  const {
@@ -18,7 +21,7 @@ export default function TodoList() {
     // refetchOnMount:false,//
     // refetchInterval:15000 // refrech server for fresh data
     refetchOnWindowFocus: true,
-    enabled: false,
+    enabled: false, // block the api request from fetching data on reload
     retry: 0, //
     cacheTime: 50000, // = 50 sec
     staleTime: 10000, // 10 sec
@@ -63,6 +66,8 @@ export default function TodoList() {
     
   return (
     <div className="container ">
+   <TodoCreate/>
+
       <button className="btn btn-primary" disabled={isFetching} onClick={refetch}>Refetch Data</button>
       <p> {dataUpdatedAt ? `Last Update: ${new Date(dataUpdatedAt).toDateString()}` : "Refetch to Update Data"}</p>
       <p> {dataUpdatedAt ? `${new Date(dataUpdatedAt).toTimeString().substring(0,8)}` : ""}</p>

@@ -9,7 +9,6 @@ export default function TodoForm({ isUpdate = false }) {
   const { register, handleSubmit, formState: { errors, isValid, isDirty } } = useForm({
     
     defaultValues: async () => {
-
         if (params.id && isUpdate) {
         return await TodoApi.get(params.id)
         }
@@ -23,12 +22,18 @@ export default function TodoForm({ isUpdate = false }) {
     if (isUpdate) {
       const todo = new TodoModel(data.id,data.title, data.completed, data.id);
       await TodoApi.update(todo);
+      window.location.href("/todos");
     } else {
       const todo = new TodoModel(data.id,data.title, data.completed);
       await TodoApi.create(todo);
+      window.location.reload();
     }
 
-    window.history.back();
+  
+   
+
+    
+
   };
 
 

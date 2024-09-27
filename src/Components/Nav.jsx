@@ -18,11 +18,8 @@ export default function Layout() {
               </Link>
               <span className="visually-hidden">(current)</span>
             </li>
-            <li className="nav-item">
-              <Link to={"/todo/create"} className="nav-link fw-bolder">
-                Create
-              </Link>
-            </li>
+         
+         
           </ul>
         </div>
       </nav>

@@ -2,7 +2,7 @@
   "todos": [
     {
       "id": "5b24",
-      "title": "HTML CSS",
+      "title": "HTML&CSS",
       "completed": true
     },
     {
@@ -21,18 +21,23 @@
       "completed": true
     },
     {
-      "id": "sez6",
-      "title": "Git & Github",
+      "id": "286d",
+      "title": "vv",
       "completed": true
     },
     {
-      "id": "dfgd6",
-      "title": "React  JS (Vite.js)",
+      "id": "50d7",
+      "title": "ff",
       "completed": true
     },
     {
-      "id": "dsf5",
-      "title": "Shadcn UI",
+      "id": "89b5",
+      "title": "gdf",
+      "completed": true
+    },
+    {
+      "id": "f6a6",
+      "title": "dfgdfg",
       "completed": false
     }
   ]
